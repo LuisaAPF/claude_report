@@ -12,7 +12,7 @@ defmodule ClaudeReport do
   defp fetch_report(prompt, opts) do
     model = Keyword.get(opts, :model, "claude-sonnet-4-5")
     allowed_domains = Keyword.get(opts, :allowed_domains)
-    max_uses = Keyword.get(opts, :max_uses, 5)
+    max_uses = Keyword.get(opts, :max_uses)
     max_tokens = Keyword.get(opts, :max_content_tokens, 1024)
     api_key = Application.get_env(:claude_report, :anthropic_api_key)
     url = Application.get_env(:claude_report, :anthropic_url)
